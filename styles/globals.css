@@ -2,49 +2,15 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
   color: #dee3ea;
   background-color: #0b0e11;
 }
 
-h1 {
-  font-size: 56px;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 40px;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-h4 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-p {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.p-heavy {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.p-small {
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.p-small-heavy {
-  font-size: 14px;
-  font-weight: 500;
+.home-header {
+  width: 100%;
+  height: 100vh;
 }
 
 .center {
@@ -52,25 +18,58 @@ p {
   place-items: center;
 }
 
-.prayer-card {
-  background-color: #151a21;
-  margin: 10px;
-  width: 50%;
-  border-radius: 8px;
-  box-shadow: 0px 24px 38px 3px rgba(0,0,0,0.14) , 0px 9px 46px 8px rgba(0,0,0,0.12) , 0px 11px 15px -7px rgba(0,0,0,0.2);
+.cc {
+  display: grid;
+  place-items: center center;
+  height: 100vh;
+  margin: 0;
 }
 
-.fajr {
-  background-image: url('/fajr.jpg');
+.bgWrap {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -1;
 }
 
-.half-box {
-  margin: 0.25em auto 0.25em auto;
-  width: 50%;
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
-
-@media only screen and (max-width: 700px) {
-  .half-box {
-    width: 100%;
-  }
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0b0e11;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: #0b0e11;
+}
+.close-button:hover {
+  background-color: #0b0e11;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
